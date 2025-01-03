@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregator</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>News Aggregator</h1>
+        <nav>
+            <ul>
+                <% if (categories && categories.length > 0) { %>
+                    <% categories.forEach(category => { %>
+                        <li><a href="/news/<%= category %>"><%= category.charAt(0).toUpperCase() + category.slice(1) %></a></li>
+                    <% }) %>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <%- body %>
+    </main>
+    <footer>
+        <p>&copy; 2025 News Aggregator</p>
+    </footer>
+</body>
+</html>
